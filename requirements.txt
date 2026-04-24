@@ -57,3 +57,6 @@ pytest-cov>=4.1.0
 black>=23.7.0
 flake8>=6.1.0
 isort>=5.12.0
+
+# Personal additions (not in upstream)
+rich>=13.5.0  # nicer terminal output for my local experiments
