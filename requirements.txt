@@ -18,7 +18,7 @@ pyportfolioopt>=1.5.5
 
 # Reinforcement learning
 stable-baselines3>=2.1.0
-gym>=0.26.2
+# gym>=0.26.2  # deprecated; using gymnasium only
 gymnasium>=0.29.1
 
 # Visualization
