@@ -35,6 +35,11 @@
 > - Custom CVaR-based risk overlays for BTC/ETH portfolios
 > - Comparing equal-weight vs. mean-variance allocation under the $\mathcal{A}$ interface
 > - Notes from experiments are tracked in [`experiments/`](./experiments/) (not pushed upstream)
+>
+> **Status / personal TODOs:**
+> - [ ] Reproduce Table 3 results from the paper on my local machine
+> - [ ] Test CVaR overlay with confidence level α=0.95 vs α=0.99 on 2022 bear market data
+> - [ ] Check whether the `rebalance_threshold` param in the allocation module actually clips small trades
 
 ## About
 
@@ -42,8 +47,4 @@
 
 Introduced in our paper *"FinRL-X: An AI-Native Modular Infrastructure for Quantitative Trading"* ([arXiv:2603.21330](https://arxiv.org/abs/2603.21330)), FinRL-X succeeds the original [FinRL](https://github.com/AI4Finance-Foundation/FinRL) framework with a fully modernized architecture designed for the LLM and agentic AI era.
 
-> FinRL-X is **not just a library** — it is a full-stack trading platform engineered around modularity, reproducibility, and production-readiness, supporting everything from ML-based stock selection and professional backtesting to live brokerage execution.
-
-At its core is a **weight-centric architecture** — the target portfolio weight vector is the sole interface contract between strategy logic and downstream execution:
-
-$$w_t = \mathcal{R}_t\bigl(\mathcal{T}_t\bigl(\mathcal{A}_t\bigl$$
+> FinRL-X is **not just a library** — it is a full-stack trading platform engineered around modularity, reproducibility, and production-readiness, supporting everything from ML-based stock selection and professional bac
