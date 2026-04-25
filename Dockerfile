@@ -40,7 +40,8 @@ RUN pip install -e .
 # Added data/raw and data/processed subdirs to keep raw vs processed data organized
 # Added experiments/ to track individual training runs with timestamped subdirs
 # Added cache/ to store downloaded market data so I'm not re-fetching on every run
-RUN mkdir -p data/raw data/processed logs notebooks models experiments cache
+# Added results/ to save backtest outputs and performance reports
+RUN mkdir -p data/raw data/processed logs notebooks models experiments cache results
 
 # Create non-root user
 RUN useradd --create-home --shell /bin/bash app \
