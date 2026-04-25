@@ -62,3 +62,4 @@ isort>=5.12.0
 rich>=13.5.0  # nicer terminal output for my local experiments
 notebook>=7.0.0  # prefer classic notebook interface over jupyterlab for quick iteration
 ta>=0.10.2  # pure-python TA library as a drop-in alternative to ta-lib (no C deps needed)
+openpyxl>=3.1.0  # needed for pd.read_excel() when exporting results to .xlsx for review
