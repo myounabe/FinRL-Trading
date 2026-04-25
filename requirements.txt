@@ -60,3 +60,5 @@ isort>=5.12.0
 
 # Personal additions (not in upstream)
 rich>=13.5.0  # nicer terminal output for my local experiments
+notebook>=7.0.0  # prefer classic notebook interface over jupyterlab for quick iteration
+ta>=0.10.2  # pure-python TA library as a drop-in alternative to ta-lib (no C deps needed)
