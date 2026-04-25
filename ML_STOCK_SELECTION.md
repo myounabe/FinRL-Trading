@@ -61,14 +61,6 @@ datadate    tradedate    trade_price    y_return = ln(next/this)
 | `ln(adj_close_q[t+1] / adj_close_q[t])` | adj_close_q is the quarter-end price; the investor cannot buy at quarter-end because the report isn't public yet | Use `trade_price` (price at tradedate) |
 | `ln(price_2025-12-31 / price_2025-09-30)` | On 2025-09-30 the Q3 report is not yet public; you can't act on it until tradedate 2025-12-01 | Buy at tradedate, not quarter-end |
 | y_return = 0 | Frozen price from delisted ticker whose adj_close_q was never updated | Set to NULL |
+| Using raw close instead of adjClose | Does not account for splits/dividends; will produce incorrect returns for tickers with corporate actions | Always use `adjClose` for trade_price |
 
-> **Personal note:** I initially made the quarter-end price mistake myself when first reading the upstream docs — the tradedate offset is easy to overlook. The worked AMD example above is the fastest sanity-check; re-read it if anything looks off before trusting model outputs.
-
-### Pre-Run Verification (MUST execute before every model run)
-
-```python
-import sqlite3, pandas as pd, numpy as np
-conn = sqlite3.connect('data/finrl_trading.db')
-df = pd.read_sql('''
-    SELECT ticker, datadate, trade
-```
+> **Personal note:** I initially made the quarter-end price mistake myself when first reading the upstream docs — the tradedate offset is easy to overlook. The worked AMD example above is the fastest sanity-check; re-read it before touching any y_return logic. Also burned time once using raw close instead of adjClose on a ticker that had a 2-for-1 split mid-quarter — added the row above as a reminder.
