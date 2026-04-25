@@ -38,7 +38,8 @@ RUN pip install -e .
 # Also create a personal notebooks dir for my local experimentation
 # Added models/ to persist trained model checkpoints between runs
 # Added data/raw and data/processed subdirs to keep raw vs processed data organized
-RUN mkdir -p data/raw data/processed logs notebooks models
+# Added experiments/ to track individual training runs with timestamped subdirs
+RUN mkdir -p data/raw data/processed logs notebooks models experiments
 
 # Create non-root user
 RUN useradd --create-home --shell /bin/bash app \
